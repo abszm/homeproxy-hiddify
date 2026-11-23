@@ -3331,7 +3331,6 @@ msgstr "有效端口值"
 msgid "valid uuid"
 msgstr "有效 uuid"
 
-
 #: htdocs/luci-static/resources/view/homeproxy/node.js
 msgid "Binded interface"
 msgstr "已绑定接口"
@@ -3556,7 +3555,6 @@ msgstr "不代理 BT 下载"
 msgid "Force torrent traffic (BitTorrent protocol + common ports) to bypass the proxy."
 msgstr "强制 BitTorrent 协议及常用端口的流量绕过代理。"
 
-
 #: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
 msgid "HomeProxy Diagnostics"
 msgstr "HomeProxy 诊断"
@@ -3564,10 +3562,6 @@ msgstr "HomeProxy 诊断"
 #: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
 msgid "Run All Tests"
 msgstr "运行全部测试"
-
-#: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
-msgid "Runs Core, Config, and Network checks simultaneously."
-msgstr "同时运行核心、配置和网络检测。"
 
 #: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
 msgid "Core & System"
@@ -3682,10 +3676,6 @@ msgid "Testing DNS…"
 msgstr "正在测试 DNS…"
 
 #: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
-msgid "DNS test only applies to Russia routing mode."
-msgstr "DNS 测试仅适用于俄罗斯路由模式。"
-
-#: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
 msgid "Russia DNS"
 msgstr "俄罗斯 DNS"
 
@@ -3701,32 +3691,12 @@ msgid "Status"
 msgstr "状态"
 
 #: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
-msgid "Responding"
-msgstr "响应正常"
-
-#: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
-msgid "No response — check server address"
-msgstr "无响应——请检查服务器地址"
-
-#: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
-msgid "nslookup yandex.ru"
-msgstr "nslookup yandex.ru"
-
-#: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
 msgid "Secure DNS"
 msgstr "安全 DNS"
 
 #: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
 msgid "Bootstrap"
 msgstr "初始解析"
-
-#: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
-msgid "resolves via Russia DNS"
-msgstr "通过俄罗斯 DNS 解析成功"
-
-#: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
-msgid "failed to resolve — Russia DNS must work first"
-msgstr "解析失败——俄罗斯 DNS 需先正常工作"
 
 #: htdocs/luci-static/resources/view/homeproxy/diagnostics.js
 msgid "nslookup"
@@ -3865,10 +3835,6 @@ msgstr "直接解析俄罗斯域名，不经过代理。"
 msgid "Resolves blocked domains via proxy — your ISP cannot see which sites you look up. Uses encrypted DNS (DoH/DoT = DNS over HTTPS/TLS)."
 msgstr "通过代理解析被封锁的域名——运营商无法看到您查询的站点。使用加密 DNS（DoH/DoT = DNS over HTTPS/TLS）。"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js
-msgid "Default route is Direct. Added rules are proxied, with automatic priority:<br>1. Smaller lists (YouTube, Discord etc.)<br>2. <b>Russia Inside</b> — Russian services that must stay accessible (allows-list by itdoginfo)<br>3. <b>Re-filter</b> — community blocklist of domains and IPs banned in Russia (Roskomnadzor)"
-msgstr "默认路由为直连。已添加的规则走代理，优先级自动排列：<br>1. 小列表（YouTube、Discord 等）<br>2. <b>Russia Inside</b> — 必须保持可访问的俄罗斯服务（itdoginfo 白名单）<br>3. <b>Re-filter</b> — 俄罗斯被封锁域名和 IP 的社区黑名单（Roskomnadzor）"
-
 #: htdocs/luci-static/resources/view/homeproxy/node.js:2725
 msgid "DNS not ready — wait a few seconds after Apply and retry"
 msgstr "DNS 尚未就绪——点击“应用”后请稍候几秒再重试"
@@ -3876,3 +3842,200 @@ msgstr "DNS 尚未就绪——点击“应用”后请稍候几秒再重试"
 #: htdocs/luci-static/resources/view/homeproxy/node.js:2907
 msgid "Resolving test hosts…"
 msgstr "正在解析测试主机…"
+
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "A free way to unblock throttled sites (e.g. YouTube) without a VPN subscription. Works by confusing your ISP's traffic analysis — your traffic is NOT encrypted or hidden, your ISP can still see which sites you visit. Results depend on your ISP and may require trying different strategies in the ByeDPI tab. ByeDPI will be installed automatically on first enable."
+msgstr "无需 VPN 订阅即可解除限速网站（如 YouTube）封锁的免费方式。通过混淆运营商的流量分析来工作——流量不会被加密或隐藏，运营商仍能看到你访问了哪些网站。"
+"效果取决于运营商，可能需要在 ByeDPI 标签页中尝试不同的策略。首次启用时会自动安装 ByeDPI。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Aggressive"
+msgstr "激进"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Arguments passed to ciadpi after <code>-i 127.0.0.1 -p &lt;port&gt;</code>. Select a preset above or enter custom options. See ciadpi <code>--help</code> for full flag reference."
+msgstr "在 <code>-i 127.0.0.1 -p &lt;port&gt;</code> 之后传给 ciadpi 的参数。在上方选择一个预设，或输入自定义选项。"
+"完整参数说明请参阅 ciadpi <code>--help</code>。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Auto-mode"
+msgstr "自动模式"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Block QUIC (UDP port 443)"
+msgstr "封锁 QUIC（UDP 443 端口）"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "ByeDPI"
+msgstr "ByeDPI"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "ByeDPI (ciadpi) is not installed. Install it now?"
+msgstr "ByeDPI（ciadpi）未安装。现在安装吗？"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "ByeDPI (local DPI bypass)"
+msgstr "ByeDPI（本地 DPI 绕过）"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "ByeDPI strategy tester"
+msgstr "ByeDPI 策略测试器"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "Cannot remove: ByeDPI is selected as Main Node. Change Main Node first."
+msgstr "无法删除：ByeDPI 已被选为主节点。请先更改主节点。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Command options"
+msgstr "命令选项"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Disorder — reorders TCP segments"
+msgstr "乱序——重排 TCP 数据段"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Done"
+msgstr "完成"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Enable ByeDPI"
+msgstr "启用 ByeDPI"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "Enables real HTTP-based ByeDPI strategy testing. Required for the \"Test all strategies\" feature in Client → ByeDPI tab."
+msgstr "启用基于真实 HTTP 的 ByeDPI 策略测试。「测试全部策略」功能（客户端 → ByeDPI 标签页）需要此项。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Fake MD5"
+msgstr "伪造 MD5"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Fake SNI / TLS Modification"
+msgstr "伪造 SNI / TLS 修改"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Fake TTL"
+msgstr "伪造 TTL"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Full Combo"
+msgstr "完整组合"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Grouped by technique. Based on <a href=\"https://github.com/hufrea/byedpi\" target=\"_blank\">hufrea/byedpi</a> and community testing. See also <a href=\"https://github.com/fatyzzz/Byedpi-Setup\" target=\"_blank\">fatyzzz/Byedpi-Setup</a>."
+msgstr "按技术分组。基于 <a href=\"https://github.com/hufrea/byedpi\" target=\"_blank\">hufrea/byedpi</a> "
+"及社区测试。另见 <a href=\"https://github.com/fatyzzz/Byedpi-Setup\" target=\"_blank\">fatyzzz/Byedpi-Setup</a>。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "HTTP Modification"
+msgstr "HTTP 修改"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "Installed"
+msgstr "已安装"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "Local SOCKS5 DPI bypass proxy by <a href=\"https://github.com/hufrea/byedpi\" target=\"_blank\">hufrea</a>. Packages by <a href=\"https://github.com/1andrevich/ByeDPI-OpenWrt\" target=\"_blank\">1andrevich/ByeDPI-OpenWrt</a>. Configure in the Client → ByeDPI tab."
+msgstr "本地 SOCKS5 DPI 绕过代理，作者 <a href=\"https://github.com/hufrea/byedpi\" target=\"_blank\">hufrea</a>。"
+"OpenWrt 软件包由 <a href=\"https://github.com/1andrevich/ByeDPI-OpenWrt\" target=\"_blank\">1andrevich/ByeDPI-OpenWrt</a> "
+"提供。请在客户端 → ByeDPI 标签页中配置。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "No package manager found. Install ciadpi manually from the Status page."
+msgstr "未找到软件包管理器。请在状态页手动安装 ciadpi。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "OOB"
+msgstr "OOB（带外数据）"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Preparing..."
+msgstr "准备中…"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "Reinstall"
+msgstr "重新安装"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Runs all 43 presets one by one and shows which ones work. Requires curl (install on Status page). ~5-7 min total."
+msgstr "按顺序逐个运行全部 43 个预设，并显示哪些可用。需要 curl（请在状态页安装）。总计约 5-7 分钟。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Split"
+msgstr "分片"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Starts ciadpi with the current options on a temporary port and tests it. With curl installed: makes a real HTTP request through ciadpi to verify DPI bypass. Without curl: only confirms arguments are valid and ciadpi starts."
+msgstr "使用当前选项在临时端口上启动 ciadpi 并进行测试。已安装 curl 时：会通过 ciadpi 发起真实 HTTP 请求以验证 DPI 绕过。"
+"未安装 curl 时：仅确认参数有效且 ciadpi 能够启动。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Strategy preset"
+msgstr "策略预设"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "TLS Record Split"
+msgstr "TLS 记录分片"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Test all 43 strategies sequentially?\n\nEach test takes ~5-10 seconds (~5-7 min total).\nLAN clients are not affected during testing.\n\nRequires curl. Install it on the Status page first."
+msgstr "要按顺序测试全部 43 个策略吗？\n\n每项测试约 5-10 秒（总计约 5-7 分钟）。\n测试期间不影响局域网客户端。\n\n需要 curl。"
+"请先在状态页安装。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Test all strategies"
+msgstr "测试全部策略"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Test current strategy"
+msgstr "测试当前策略"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Test failed"
+msgstr "测试失败"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Testing..."
+msgstr "测试中…"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js:107
+#: htdocs/luci-static/resources/view/homeproxy/server.js:134
+msgid "The modern multi-core ImmortalWrt proxy platform."
+msgstr "现代多核心 ImmortalWrt 代理平台。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "This nftables rule drops all outgoing UDP port 443 packets to external addresses, forcing browsers and apps to fall back to TCP/TLS where ByeDPI can apply DPI bypass. Side effects: may break services that require QUIC, and affects all LAN clients. Enable if your strategy works but some sites still do not load."
+msgstr "此 nftables 规则会丢弃发往外部地址的 UDP 443 端口出站数据包，强制浏览器和应用回落到 TCP/TLS，以便 ByeDPI 应用 "
+"DPI 绕过。副作用：可能导致需要 QUIC 的服务无法使用，并影响所有局域网客户端。如果策略有效但仍有部分网站打不开，再启用此项。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "Wrap UDP traffic in TCP when routing to ciadpi."
+msgstr "路由到 ciadpi 时将 UDP 流量封装进 TCP。"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "click Apply next to any working strategy"
+msgstr "点击任一可用策略旁边的“应用”"
+
+msgid "hiddify-core with sing-box syntax compatibility. Supports Hiddify App protocols and advanced features. Best compatibility with Hiddify Manager protocols."
+msgstr "hiddify-core，兼容 sing-box 语法。支持 Hiddify App 协议及高级功能。与 Hiddify Manager 协议的兼容性最佳。"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "running"
+msgstr "运行中"
+
+#: htdocs/luci-static/resources/view/homeproxy/status.js
+msgid "stopped"
+msgstr "已停止"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "— select a preset —"
+msgstr "— 选择一个预设 —"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "✓ HTTP request succeeded through ciadpi"
+msgstr "✓ 通过 ciadpi 的 HTTP 请求成功"
+
+#: htdocs/luci-static/resources/view/homeproxy/client.js
+msgid "✓ ciadpi started (install curl for full test)"
+msgstr "✓ ciadpi 已启动（安装 curl 可进行完整测试）"

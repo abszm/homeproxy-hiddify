@@ -88,24 +88,24 @@ fi
 rm -f /tmp/app.$EXT
 ok "  приложение установлено."
 
-# Русский язык интерфейса (по умолчанию — да)
-ask "  Установить пакет русского языка? [Y/n] (по умолчанию Y):"
+# 中文界面（默认安装）
+ask "  安装中文语言包？[Y/n]（默认 Y）："
 case "$REPLY" in
-	n|N|no|NO|нет|Нет|н|Н) ;;  # отказ — пропускаем
+	n|N|no|NO) ;;  # 拒绝——跳过
 	*)
-		info "  ставлю русский язык LuCI..."
-		# базовый перевод интерфейса LuCI (из фида, best-effort)
-		if [ "$PM" = apk ]; then apk add luci-i18n-base-ru >/dev/null 2>&1; else opkg install luci-i18n-base-ru >/dev/null 2>&1; fi
-		# перевод самого приложения (из релиза homeproxy)
-		LURL=$(api 'https://api.github.com/repos/1andrevich/homeproxy-hiddify/releases' \
-			| grep -o "https://github\.com/[^\"]*luci-i18n-homeproxy-ru[^\"]*\.${EXT}" | head -1)
+		info "  正在安装中文 LuCI..."
+		# LuCI 基础中文翻译（来自软件源，尽力而为）
+		if [ "$PM" = apk ]; then apk add luci-i18n-base-zh-cn >/dev/null 2>&1; else opkg install luci-i18n-base-zh-cn >/dev/null 2>&1; fi
+		# 本应用的中文翻译（来自本 fork 的 release）
+		LURL=$(api 'https://api.github.com/repos/abszm/homeproxy-hiddify/releases' \
+			| grep -o "https://github\.com/[^\"]*luci-i18n-homeproxy-zh-cn[^\"]*\.${EXT}" | head -1)
 		if [ -n "$LURL" ] && dl "$LURL" /tmp/i18n.$EXT; then
 			if [ "$PM" = apk ]; then apk add /tmp/i18n.$EXT 2>/dev/null || apk add --allow-untrusted /tmp/i18n.$EXT; \
 			else opkg install /tmp/i18n.$EXT; fi
-		else warn "  перевод приложения не найден — пропускаю"; fi
+		else warn "  未找到应用中文翻译包——跳过（主包已内置中文翻译）"; fi
 		rm -f /tmp/i18n.$EXT
-		uci set luci.main.lang=ru; uci commit luci
-		ok "  русский язык установлен" ;;
+		uci set luci.main.lang=zh-cn; uci commit luci
+		ok "  中文界面已设置" ;;
 esac
 
 # Прописываем зеркало в бэкенд, чтобы делегированные загрузки тоже его использовали
